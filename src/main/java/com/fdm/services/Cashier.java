@@ -1,5 +1,6 @@
 package com.fdm.services;
 
+import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -16,5 +17,9 @@ public class Cashier {
  
 	public void insertProduct(Product product){
 		 	storeFront.addProduct(product);
+	}
+	
+	public Set<Product> getProducts() {
+		return this.storeFront.getAvailableProducts();
 	}
 }
