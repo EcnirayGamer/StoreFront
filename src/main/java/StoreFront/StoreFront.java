@@ -21,6 +21,10 @@ public class StoreFront {
 	public void addProduct(Product p) {
 		this.productList.add(p);
 	}
+	
+	public void removeProduct(Product p) {
+		this.productList.remove(p);
+	}
 
 	@Override
 	public String toString() {
