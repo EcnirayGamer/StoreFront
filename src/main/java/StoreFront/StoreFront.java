@@ -17,6 +17,10 @@ public class StoreFront {
 	public void setProductList(Set<Product> productList) {
 		this.productList = productList;
 	}
+	
+	public void addProduct(Product p) {
+		this.productList.add(p);
+	}
 
 	@Override
 	public String toString() {
