@@ -6,12 +6,6 @@ public class Product {
 	private String name;
 	private double price;
 	private int id;
-	
-	
-	public Product() {
-		
-	}
-
 
 	public Product(String name, double price, int id) {
 		super();
