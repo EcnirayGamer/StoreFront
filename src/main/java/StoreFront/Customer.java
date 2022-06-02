@@ -1,18 +1,20 @@
 package StoreFront;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class Customer {
 	private String name;
-	private double amount;
-	private List<Product> products;
+	private double wallet;
+	private List<Product> groceryList;
 
-	public Customer(String name) {
+	public Customer(String name, double wallet, List<Product> groceryList) {
 		this.name = name;
-		this.amount = amount;
-		List<Product> products = new ArrayList<>();
+		this.wallet = wallet;
+		this.groceryList = groceryList;
 	}
 
 	public String getName() {
@@ -23,27 +25,31 @@ public class Customer {
 		this.name = name;
 	}
 
-	public double getAmount() {
-		return amount;
+	public double getWallet() {
+		return wallet;
 	}
 
-	public void setAmount(double amount) {
-		this.amount = amount;
+	public void setWallet(double wallet) {
+		this.wallet = wallet;
 	}
 
-	public List<Product> getALLProducts() {
-		return products;
+
+	
+	public Optional<Object> getProduct(Product product){
+		for (Product p : groceryList) {
+			if(p.equals(product)) {
+				return Optional.of(p);
+			} 
+			
+			
+		}
+		return Optional.empty();
 	}
 	
-//	public List<Product> getProduct(Product product){
-//		for(Product p : products) 
-//		return p;
-//	}
-//	
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(amount, name, products);
+		return Objects.hash(wallet, name, groceryList);
 	}
 
 	@Override
@@ -55,14 +61,14 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
-		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount)
-				&& Objects.equals(name, other.name) && Objects.equals(products, other.products);
+		return Double.doubleToLongBits(wallet) == Double.doubleToLongBits(other.wallet)
+				&& Objects.equals(name, other.name) && Objects.equals(groceryList, other.groceryList);
 	}
 
 
 	@Override
 	public String toString() {
-		return "Customer [name=" + name + ", amount=" + amount + ", products=" + products + "]";
+		return "Customer [name=" + name + ", amount=" + wallet + ", products=" + groceryList + "]";
 	}
 	
 	
