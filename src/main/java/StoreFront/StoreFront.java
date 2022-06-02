@@ -1,25 +1,26 @@
 package StoreFront;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
 public class StoreFront {
-	private Set<Product> productList;
+	private Map<Product, Integer> productList;
 	
-	public StoreFront(Set<Product> productList) {
+	public StoreFront(Map<Product, Integer> productList) {
 		this.productList = productList;
 	}
 	
-	public Set<Product> getAvailableProducts() {
+	public Map<Product, Integer> getAvailableProducts() {
 		return productList;
 	}
 	
-	public void setProductList(Set<Product> productList) {
+	public void setAvailableProducts(Map<Product, Integer> productLists) {
 		this.productList = productList;
 	}
 	
 	public void addProduct(Product p) {
-		this.productList.add(p);
+		this.productList.put(null, null);
 	}
 	
 	public void removeProduct(Product p) {
