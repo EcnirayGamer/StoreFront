@@ -38,9 +38,14 @@ public class Cashier {
 		for (String p : groceryList) {
 			for(Product key : keys){
 				if(p.equals(key.getName())){
-					productList.put(key, productList.get(key) - 1);
-					basket.add(key);
-					total += key.getPrice();
+					if(productList.get(key) == 0){
+						continue;
+					} else{
+						productList.put(key, productList.get(key) - 1);
+						basket.add(key);
+						total += key.getPrice();
+					}
+
 				}
 			}
 		}
