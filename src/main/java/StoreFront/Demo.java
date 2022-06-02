@@ -2,6 +2,7 @@ package StoreFront;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,6 +35,8 @@ public class Demo {
 		productList.add(m3);
 		productList.add(m4);
 		productList.add(m5);
+		
+		Map<String, String> newMap;
 		
 		StoreFront storeFront = new StoreFront(productList);
 		Cashier cashier = new Cashier(storeFront);

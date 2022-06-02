@@ -31,18 +31,17 @@ public class Cashier {
 	
 	public String checkoutCustomer(List<String> groceryList) {
 		Set<Product> productList = this.getProducts();
+		int size = productList.size();
 		List<Product> basket = new ArrayList<>();	
+		double total = 0;
 		for (String p : groceryList) {
 			System.out.println(p);
-			productList.forEach((product) -> {
-				if(p == product.getName()) {
-					basket.add(product);
-					productList.remove(product);
-				} 
-			});
+			for (int i = 0; i < size; i++) {
+				
+			}
 		}
 		System.out.println(basket);
-		return ("Basket: " + basket);
+		return ("Basket: " + basket + " - total: " + total);
 	} 
 	
 }
