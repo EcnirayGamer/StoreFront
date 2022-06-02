@@ -9,9 +9,9 @@ import java.util.Optional;
 public class Customer {
 	private String name;
 	private double wallet;
-	private List<Product> groceryList;
+	private List<String> groceryList;
 
-	public Customer(String name, double wallet, List<Product> groceryList) {
+	public Customer(String name, double wallet, List<String> groceryList) {
 		this.name = name;
 		this.wallet = wallet;
 		this.groceryList = groceryList;
@@ -32,18 +32,9 @@ public class Customer {
 	public void setWallet(double wallet) {
 		this.wallet = wallet;
 	}
-
-
 	
-	public Optional<Object> getProduct(Product product){
-		for (Product p : groceryList) {
-			if(p.equals(product)) {
-				return Optional.of(p);
-			} 
-			
-			
-		}
-		return Optional.empty();
+	public List<String> getGroceryList() {
+		return this.groceryList;
 	}
 	
 	
